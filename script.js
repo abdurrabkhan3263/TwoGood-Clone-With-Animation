@@ -119,6 +119,7 @@ page3Animation();
 
 let button = document.querySelectorAll('.main-button');
 let buttonContent = document.querySelector('.content-button');
+let page4Title = document.querySelector(".page-4-content h1");
 let page3Content = [
   {
     buttonName: 'm// 001 <br>Cartier.',
@@ -199,53 +200,105 @@ let page3Content = [
 
 ]
 
-function buttonData() {
-  buttonContent.innerHTML = '';
-  page3Content.forEach(value => {
-    let button = document.createElement('button');
-    button.classList.add('.main-button');
-    button.innerHTML = `
-  <div class="point"></div>
-  <p class="button-para">${value.buttonName}</p>
-  `
-    buttonContent.appendChild(button);
+
+function createButton(value) {
+  let button = document.createElement('button');
+  button.classList.add('main-button');
+  button.innerHTML = `
+    <div class="point"></div>
+    <p class="button-para">${value.buttonName}</p>
+  `;
+  return button
+}
+
+const addTitle = () =>{
+  page4Title.textContent = page3Content[2].value;
+  gsap.from(page4Title , {
+    transform : 'translateY(100px)',
+    opacity : 0,
+    duration : 0.5,
   })
 }
-buttonData();
 
+const addingPointId = () =>{
+  let arr = buttonContent.children;
+  arr[2].children[0].setAttribute('id' , 'active-point');
+}
+
+
+function updateButton() {
+  buttonContent.innerHTML = '';
+  page3Content.forEach(value => {
+    let button = createButton(value);
+    buttonContent.appendChild(button);
+  })
+  addTitle();
+  addingPointId();
+}
+
+function moveContent(direction) {
+  let value1 = -350;
+  let value2 = 350;
+
+  if(window.innerWidth < 400){
+    value1 = -136;
+    value2 = 136;
+  }
+
+  let getDirection = direction === 'left' ? value1 : value2;
+  gsap.to(buttonContent.children, {
+    transform: `translateX(${getDirection}px)`,
+    duration: 0.5,
+    ease: 'ease',
+    onComplete: () => {
+      if (direction === 'left') {
+        page3Content.push(page3Content.shift());
+      }
+      else {
+        page3Content.unshift(page3Content.pop());
+      }
+      updateButton();
+    }
+  });
+}
+
+updateButton()
 
 buttonContent.addEventListener('click', (event) => {
-  let firstChild = event.target.parentNode == event.target.parentNode.parentNode.children[0];
-  let secondChild = event.target.parentNode == event.target.parentNode.parentNode.children[1];
-  let thirdChild = event.target.parentNode == event.target.parentNode.parentNode.children[3];
-  let fourthChild = event.target.parentNode == event.target.parentNode.parentNode.children[4];
-  let sixChild = event.target.parentNode == event.target.parentNode.parentNode.children[5];
-  if (thirdChild || fourthChild || sixChild) {
-      let myValue = event.target.parentNode;
-      let children = myValue.parentNode.children;
-      gsap.to(children, {
-        transform: 'translateX(-350px)',
-        duration: 0.3,
-        ease: 'power1.out'
-      })
-      setTimeout(() => {
-        let m = page3Content.shift()
-        page3Content.push(m)
-        buttonData()
-      }, 300)
+  let buttonIndex = Array.from(buttonContent.children).indexOf(event.target.parentNode);
+  if (buttonIndex === 0 || buttonIndex === 1) {
+    moveContent('left');
   }
-  if(firstChild || secondChild){
-    let myValue = event.target.parentNode;
-    let children = myValue.parentNode.children;
-    gsap.to(children, {
-      transform: 'translateX(350px)',
-      duration: 0.3,
-      ease: 'power1.out'
-    })
-    setTimeout(() => {
-      let m = page3Content.pop();
-      page3Content.unshift(m)
-      buttonData()
-    }, 300)
+  else if (buttonIndex === 3 || buttonIndex === 4 || buttonIndex === 5) {
+    moveContent('right')
   }
 })
+
+
+function onTextArea(){
+  document.querySelector('#gmail-text-area').setAttribute('placeholder' , '')
+}
+
+gsap.from('.owner-images' , {
+  opacity : 0,
+  scale : 1.1,
+  duration : 0.5,
+  stagger : 0.1,
+  scrollTrigger: {
+    trigger : '.owner-images',
+    scroller : '#main',
+    start : 'top 60%'
+  }
+})
+
+
+gsap.from('.list-01 , .list-02-logo , list-03' , {
+  opacity : 0,
+  duration : 0.4,
+  scrollTrigger: {
+    trigger : 'footer',
+    scroller : '#main',
+    start : 'top 40%'
+  }
+})
+

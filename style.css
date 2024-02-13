@@ -8,26 +8,32 @@
     src: url(fonts/futura.ttf);
 }
 
-*{
-    margin : 0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: heading , sans-serif;
+    font-family: heading, sans-serif;
 }
-html , body{
-    height : 100%;
-    width : 100%;
+
+html,
+body {
+    height: 100%;
+    width: 100%;
     background-color: #F7F7F7;
     color: #000000;
 }
 
-*::selection{
+*::selection {
     background-color: black;
     color: white;
 }
 
+li {
+    list-style: none;
+}
 
-nav{
+
+nav {
     padding: 32px 35px;
     display: flex;
     justify-content: space-between;
@@ -35,7 +41,7 @@ nav{
     overflow: hidden;
 }
 
-.right-div{
+.right-div {
     display: flex;
     gap: 80px;
     align-items: center;
@@ -43,13 +49,13 @@ nav{
     overflow: hidden;
 }
 
-.right-div ul{
+.right-div ul {
     display: flex;
     gap: 80px;
     align-items: center;
 }
 
-.right-div ul li{
+.right-div ul li {
     list-style: none;
     text-transform: uppercase;
     cursor: pointer;
@@ -57,11 +63,11 @@ nav{
     position: relative;
 }
 
-.list-item{
+.list-item {
     position: relative;
 }
 
-.line{
+.line {
     position: absolute;
     bottom: 0;
     width: 0%;
@@ -71,7 +77,7 @@ nav{
     /* transition: all 0.5s ; */
 }
 
-.shop-section{
+.shop-section {
     display: flex;
     gap: 70px;
     padding: 10px 20px;
@@ -83,36 +89,38 @@ nav{
     z-index: 99;
 }
 
-.shop-section i{
+.shop-section i {
     cursor: pointer;
     font-size: 15px;
 }
 
-.left-svg{
+.left-svg {
     height: 83px;
     width: 106px;
     overflow: hidden;
 }
-#svg-1{
+
+#svg-1 {
     opacity: 0;
 }
 
-#svg-2{
-        transform: translate(0px, -1px);
-        translate: none;
-        rotate: none;
-        scale: none;
+#svg-2 {
+    transform: translate(0px, -1px);
+    translate: none;
+    rotate: none;
+    scale: none;
 
 }
 
-#page1{
+#page1 {
     min-height: 100vh;
     width: 100%;
     padding-inline: 35px;
     padding-top: 100px;
+    /* display: none; */
 }
 
-#page1 h1{
+#page1 h1 {
     font-size: 15.5vw;
     text-transform: uppercase;
     text-align: center;
@@ -120,23 +128,23 @@ nav{
     white-space: nowrap;
     letter-spacing: -6px;
     font-weight: 900;
-    font-family: futura , sans-serif;
+    font-family: futura, sans-serif;
     overflow: hidden;
 }
 
 
-.img-section{
+.img-section {
     width: 100%;
     background-color: #F7F7F7;
     position: relative;
 }
 
-.img-section img{
+.img-section img {
     width: 100%;
     object-fit: cover;
 }
 
-.img-section .svg{
+.img-section .svg {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,8 +154,8 @@ nav{
     cursor: pointer;
 }
 
-.img-section .svg svg{
-    animation: svgAni 10s linear infinite; 
+.img-section .svg svg {
+    animation: svgAni 10s linear infinite;
 }
 
 .img-section .svg h3 {
@@ -158,9 +166,10 @@ nav{
 }
 
 @keyframes svgAni {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -169,39 +178,40 @@ nav{
 
 
 
-#page2{
+#page2 {
     min-height: 100vh;
     width: 100%;
     padding-inline: 35px;
+    /* display: none; */
 }
 
-.page-2-top-content{
+.page-2-top-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-size: 12px;
 }
 
-#page2 .page-2-top .page-2-top-content span{
+#page2 .page-2-top .page-2-top-content span {
     font-size: 12px;
     text-transform: uppercase;
 }
 
-.page-2-top .page-2-top-content span:nth-child(1){
+.page-2-top .page-2-top-content span:nth-child(1) {
     text-align: left;
 }
 
-.page-2-top span:nth-child(2){
+.page-2-top span:nth-child(2) {
     text-align: right;
 }
 
-.page-2-line{
+.page-2-line {
     height: 1.3px;
     width: 100%;
     background-color: #000000;
     margin-block: 4px;
 }
 
-#page2 .cards{
+#page2 .cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -209,7 +219,7 @@ nav{
     overflow: hidden;
 }
 
-#page2 .cards .cards-box{
+#page2 .cards .cards-box {
     width: 31vw;
     height: 100vh;
     overflow: hidden;
@@ -217,7 +227,7 @@ nav{
     overflow: hidden;
 }
 
-#page2 .cards .cards-box img{
+#page2 .cards .cards-box img {
     width: 100%;
     object-fit: cover;
     object-position: center;
@@ -239,41 +249,44 @@ nav{
     cursor: pointer;
 }
 
-.card-shop .point{
+.card-shop .point-black {
     height: 8px;
     width: 8px;
     border-radius: 50%;
     background-color: black;
 }
 
-.card-shop:hover{
+.card-shop:hover {
     transform-origin: top;
     transform: scaleY(0 100px);
 }
 
-#page3{
+#page3 {
     min-height: 100vh;
     width: 100%;
     margin-top: 80px;
     padding-inline: 35px;
     margin-bottom: 50px;
+    /* display: none; */
+    position: relative;
 }
 
-#page3 h1{
+
+#page3 h1 {
     width: 40%;
     font-size: 55px;
-    font-family: futura , sans-serif;
+    font-family: futura, sans-serif;
     line-height: 55px;
 }
 
-#page3 .page3-upper-part{
+#page3 .page3-upper-part {
     display: flex;
     justify-content: space-between;
 }
 
 
 
-#page3 .page3-upper-part .para{
+#page3 .page3-upper-part .para {
     width: 40%;
     height: 200px;
     font-size: 18px;
@@ -283,16 +296,16 @@ nav{
 
 }
 
-#page3 .page3-upper-part .para span{
+#page3 .page3-upper-part .para span {
     font-size: 12px;
 }
 
-.page-3-box-part{
+.page-3-box-part {
     margin-bottom: 50px;
     margin-top: 200px;
 }
 
-.page-3-box-container{
+.page-3-box-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -322,32 +335,33 @@ nav{
     font-size: 12px;
 }
 
-.page-3-boxes .pro-price h4{
+.page-3-boxes .pro-price h4 {
     font-weight: 100;
 }
 
-.page-3-box-img{
+.page-3-box-img {
     display: flex;
     justify-content: center;
     height: 75%;
     width: 100%;
 }
 
-#page4{
-    height: 100vh;
+#page4 {
+    min-height: 100vh;
     width: 100%;
     padding-inline: 34px;
 }
 
-.point{
+.point {
     height: 16px;
     width: 16px;
     border: 1.5px solid black;
     border-radius: 50%;
     margin-bottom: 20px;
+    transition: all 0.3s ease;
 }
 
-#active-point{
+#active-point {
     height: 16px;
     width: 16px;
     background-color: black;
@@ -355,11 +369,11 @@ nav{
     margin-bottom: 20px;
 }
 
-.content-button{
+.content-button {
     width: 100%;
     margin-top: 100px;
     display: flex;
-    /* overflow: auto; */
+    overflow: hidden;
 }
 
 .content-button button {
@@ -372,4 +386,345 @@ nav{
     max-width: 600px;
     text-align: left;
     cursor: pointer;
+}
+
+.page-4-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page-4-content h1 {
+    text-align: center;
+    width: 82%;
+    font-size: 70px;
+    font-family: futura;
+    line-height: 75px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    font-weight: 900;
+}
+
+.page-4-button-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-4-content button {
+    padding: 25px 65px;
+    margin-bottom: 30px;
+    outline: none;
+    border: none;
+    background-color: #000000;
+    color: #F7F7F7;
+    border-radius: 2rem;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.page-4-button-section p {
+    width: 55%;
+    text-align: center;
+}
+
+.about-owner {
+    padding-top: 250px;
+    display: flex;
+    height: 120vh;
+}
+
+.about-owner-content {
+    width: 22%;
+}
+
+.about-owner-content p {
+    line-height: 25px;
+    font-weight: 500;
+}
+
+.about-owner-content h3 {
+    font-size: 22px;
+    font-family: futura;
+    font-weight: 600;
+}
+
+.about-owner-sec-images {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    width: calc(100% - 20%);
+    overflow: hidden;
+}
+
+.about-owner-sec-images .img {
+    width: 40%;
+    overflow: hidden;
+}
+
+.about-owner-sec-images img {
+    object-fit: cover;
+    width: 100%;
+}
+
+
+footer {
+    padding-inline: 35px;
+    padding-top: 100px;
+    height: 80vh;
+    width: 100%;
+}
+
+
+footer textarea {
+    resize: none;
+    width: 100%;
+    height: 46px;
+    text-transform: uppercase;
+    display: flex;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: futura;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    background: transparent;
+    margin-bottom: 15px;
+}
+
+footer textarea::-webkit-input-placeholder {
+    color: #000000;
+}
+
+.main-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 150px;
+}
+
+.list-03 {
+    text-align: right;
+}
+
+.main-footer ul li:nth-child(1) {
+    margin-bottom: 25px;
+    cursor: text;
+    color: #a7a7a7;
+    font-size: 12px;
+}
+
+.main-footer ul li {
+    transition: all 0.3s;
+    line-height: 25px;
+}
+
+.main-footer ul li:hover {
+    color: #a7a7a7;
+    cursor: pointer;
+}
+
+.list-02-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.list-02-logo span {
+    margin-right: 20px;
+    font-size: 12px;
+    color: #a7a7a7;
+}
+
+.footer-content {
+    text-align: center;
+    width: 100%;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    margin-block-start: 100px;
+}
+
+.footer-content p {
+    width: 70%;
+    line-height: 22px;
+    padding-bottom: 100px;
+}
+
+
+@media (max-width : 600px) {
+    #page1 {
+        padding-inline: 10px;
+    }
+
+    #page1 h1 {
+        font-size: 15.5vw;
+        line-height: 13.5vw;
+        letter-spacing: -2px;
+    }
+
+    .img-section .svg {
+        width: 35%;
+    }
+
+    .img-section .svg h3 {
+        font-size: 20px;
+        font-weight: 800;
+    }
+
+    #page2 {
+        padding-inline: 10px;
+
+    }
+
+    #page2 .cards .cards-box {
+        width: 100%;
+        height: 80vh;
+    }
+
+    #page2 .cards .cards-box img {
+        scale: 1.2;
+    }
+
+    #page2 .cards {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card-shop {
+        width: 90%;
+    }
+
+    #page3 {
+        padding-inline: 10px;
+    }
+
+    #page3 h1 {
+        width: 100%;
+        font-size: 40px;
+        line-height: 40px;
+        text-align: center;
+    }
+
+    #page3 .page3-upper-part {
+        flex-direction: column;
+    }
+
+
+    #page3 .page3-upper-part .para {
+        width: 100%;
+        padding-right: 0;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .page-3-box-container .page-3-boxes {
+        width: 100%;
+    }
+
+    .page-3-box-container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .page-3-box-img {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .page-3-box-img img{
+        width: 100%;
+    }
+
+    #page4 {
+        padding-inline: 10px;
+    }
+
+    .content-button button {
+        font-size: 20px;
+        min-width: 136px;
+        max-width: 600px;
+    }
+
+    .content-button {
+        align-items: start;
+        overflow: hidden;
+    }
+
+
+    .page-4-content h1 {
+        width: 100%;
+        font-size: 30px;
+        line-height: 30px;
+        margin-top: 20px;
+        margin-bottom: 60px;
+    }
+
+
+    .about-owner {
+        padding-top: 100px;
+        flex-direction: column;
+        min-height: 80vh;
+    }
+
+    .about-owner-content {
+        width: 100%;
+    }
+
+    .about-owner-sec-images {
+        justify-content: center;
+        width: 100%;
+        overflow: hidden;
+    }
+    .about-owner-sec-images .img {
+        width: 50%;
+    }
+
+    footer {
+        padding-inline: 10px;
+        padding-top: 20px;
+    }
+
+    footer textarea {
+        height: 70px;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+
+    .main-footer {
+        flex-direction: column;
+    }
+
+    .list-02-logo {
+        align-items: start;
+        margin-top: 30px;
+    }
+
+    .footer-content {
+        justify-content: start;
+    }
+
+    .footer-content p {
+        width: 70%;
+        line-height: 22px;
+        padding-bottom: 100px;
+        text-align: start;
+    }
+
+    .logo-content{
+        text-align: start;
+    }
+
+    .list-03 {
+        text-align: right;
+        margin-top: 20px;
+    }
+
+    .main-footer ul li {
+        text-align: start;
+    }
 }
